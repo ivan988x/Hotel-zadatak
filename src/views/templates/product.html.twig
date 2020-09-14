@@ -1,0 +1,264 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block header %}
+   	<div class="firstNavigation">
+  <div class="left_nav">
+            <ul>
+                <li> <img src="/images/location.png"> <a href="/">Location</a></li>
+                <li> <img src="/images/email.png"><a href="/">Mail us</a></li>
+                <li> <img src="/images/key.png"><a href="/">Login</a></li>
+                </div>
+                <div></div>
+                <div class="right_nav">
+                <li> <img src="/images/search.png"><a href="/">DE</a></li>
+                <li><a href="/">EN</a></li>
+                </div>
+            </ul>
+        </div>
+
+<div class="secondNavigation_page2">
+	<div class="hotel2">
+            <ul>
+                <li><a href="#">Hotel</a></li>
+            </ul>
+        </div>
+   <div class="center_nav2">
+      <ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Rooms</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#">Blog</a></li>
+  <li><a href="#">Contact</a></li>
+  <button type="button" class="btn btn">BOOK NOW</button>
+</ul>
+      </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+  <div class="contentSize">
+      <div class="empty"></div>
+      <div class="mainContainer">
+
+        <div class="hotelPicture">
+          
+              <img src="{{ product.url }}">
+          
+        </div>
+
+        <div class="hotelPictures">
+
+              <img src="{{ product.url }}">
+              <img src="{{ product.images[0].url }}">
+              <img src="{{ product.images[1].url }}">
+              <img src="{{ product.images[2].url }}">
+            
+        </div>
+
+        <div class="description_booking">
+        
+        <div class="descriptionRoom">
+            <div class="sobe">
+              <h2>{{ product.title }}</h2>
+            </div>
+
+            <div class="persons">
+              <p>{{ product.max_adults }} adults</p>
+              <p>{{ product.max_children }} children</p>
+              <p>{{ product.squares }} m2</p>
+            </div>
+
+            <div class="opisSobe">
+              <p>{{ product.description }}</p>
+            </div>
+
+            <div class="room_service">
+              <h2>Room services</h2>
+              </div>
+            <div class="parts_services">
+              <p> {{ product.services[0].accessories }} Accessories</p>
+              <p>{{ product.services[0].bar }} Bar 24 hours</p>
+              <p>Cleaning service</p>
+              <p>Phone</p>
+              <p>Restaurant</p>
+              <p>Spa zone</p>
+              <p>Transport</p>
+              <p>Wi-Fi</p>
+            </div>
+
+            <div class="hotel-rules">
+              <h2>Hotel rules</h2>
+            </div>
+
+            <div class="rules">
+            <p> {{ product.hotel_rules[0] }} </p>
+            <p> {{ product.hotel_rules[1] }} </p>
+            <p> {{ product.hotel_rules[2] }} </p>
+            </div>
+        </div>
+
+
+
+
+        <div class="booking">
+            
+            <div class="booking-box">
+              <h2>Start booking</h2>
+            
+            <div class="euro-price">
+              <h6>{{ product.formatted_price }}</h6>
+            </div>
+            
+            <div class="input-date">
+              <p>Dates</p>
+              <input type="date" id="start" value="2018-07-22" min="2018-01-01" max="2018-12-31" name="trip-start">
+              <input type="date" id="end" value="To Date" min="2018-01-01" max="2018-12-31" name="To Date">
+            </div>
+              
+            <div class="input-guests">
+              <p>Guests</p>
+              <input type="number" id="start" class="form-control" value="Adult">
+              <input type="number" id="end" class="form-control" value="Children">
+            </div>
+
+            <div class="booking-button">
+              <button type="button" class="btn btn">CHECK AVAILABILITY</button>
+            </div>
+            </div>
+            
+            <div class="you-may">
+              <div class="you-text">
+                <h2>You may also like</h2>
+              </div> 
+              
+              <div class="you-card">
+                <div class="cardOne">
+                <img src="{{ product.images[0].url }}" alt="room" width="198.91" height="144.38">
+                <div class="name_price">
+                  <h5 class="name-card">Small room</h5>
+                  <h5 class="link-book">Book now <img src="/images/strelica.png"></h5>
+                  <h5 class="price-card">300kn</h5>
+                </div>
+                </div>
+               
+                <div class="cardTwo">
+                <img src="{{ product.images[0].url }}" alt="room" width="198.91" height="144.38">
+                <div class="name_price">
+                  <h5 class="name-card">Big room</h5>
+                  <h5 class="link-book">Book now <img src="/images/strelica.png"></h5>
+                  <h5 class="price-card">1500kn</h5>
+                </div>
+                </div>
+              
+              </div>      
+              </div>
+          </div>
+
+          <div class="comments">
+            	<h5>Comments</h5>
+            <div class="comment">
+                <div class="img-comment">
+                <img src="{{ product.comments[0].user.profile_image }}">
+                </div>
+                <div class"name-commen">
+                <h5>{{ product.comments[0].user.name }}</h5>
+                <h6>{{ product.created_at }}</h6>
+                <p>{{ product.comments[0].comment }}</p>
+                </div>
+            </div>
+
+            <div class="replies">
+                <div class="img-name-replie">
+                <img src="{{ product.comments[0].replies[0].user.profile_image }}">
+               </div>
+                <div class="commen-replie">
+                 <h5>{{ product.comments[0].replies[0].user.name}}</h5>
+                 <h6>{{ product.updated_at }}</h6>
+                <p>{{ product.comments[0].replies[0].comment}}</p>   
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="leave-comment">
+          <h3>Leave a comment</h3>
+            <form class="forma">
+                <div class="col">
+                  <p>Name</p>
+                  <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col">
+                  <p>Email</p>
+                  <input type="text" class="form-control" placeholder="Last name">
+                </div>
+              </form>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea3">Comment</label>
+                <textarea class="form-control" id="exampleFormControlTextarea3" rows="7"></textarea>
+              </div>
+              <label class="container">Save my name and email in this browser for the next time I comment.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <button type="button" class="btn btn">BOOK NOW</button>
+
+            </div>
+            
+      
+      </div>
+      <div class="secondEmpty"></div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  <div class="footer">
+  <div class="top-footer">
+      <div class="hotels">
+          <h1>Hotel</h1>
+          <p>Every day is a new</br> day for relaxation</p>
+          <h5>Follow us</h5>
+      </div>
+      <div class="address">
+          <h5>Address<h5>
+          <div class="london">
+          <p>London</p>
+          <a href="#">Main street 1 London, CA 70413</br> Open: 9:30AM 5:30PM</a>
+          </div>
+          <div class="newyork">
+          <p>New York</p>
+          <a href="#">Great street Broadway, NT 10013</br> Open: 8:30AM 4:30PM</a>
+          </div>
+      </div> 
+      <div class="contact">
+          <h5>Contact us</h5>
+          <div class="first-contact">
+          <a href="#">+44 (800) 456-78-91</br> hotel.london@mail.com</a>
+          </div>
+          <div class="second-contact">
+          <a href="#">+1 (810) 456-78-91</br> hotel.ny@mail.com</a>
+          </div>
+      </div> 
+      <div class="touch">
+          <h5>Stay in touch</h5>
+          <input type="text" placeholder="Your email"></br>
+          <button>SUBSCRIBE</button>
+      </div>  
+  </div>
+  <div class="bottom-footer">
+    <div class="frontend">
+      <p>@2020, Frontend akademija</p>
+    </div>
+     <div class="policy">
+            <ul>
+                <li><a href="/">Privacy Policy</a></li>
+                <li><a href="/">Site map</a></li>
+                <li><a class="all" href="/">All Rihgts Reserved</a></li>
+            </ul>
+        </div>
+
+ </div> 
+ </div>
+{% endblock %}
+

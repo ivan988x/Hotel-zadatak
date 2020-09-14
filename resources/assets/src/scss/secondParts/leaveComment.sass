@@ -1,0 +1,138 @@
+.leave-comment h3 
+  margin-top: 30px
+  font-family: Arial
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 25px
+  color: #383B37
+
+
+.forma 
+  display: grid
+  grid-template-columns: 1fr 2fr
+
+
+.forma p 
+  position: relative
+  top: 10px
+  font-family: Lato
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 23px
+  color: #383B37
+
+
+.leave-comment input 
+  position: relative
+  right: 16px
+  height: 50px
+  width: 440px
+  background: #FFFFFF
+  border: 1px solid #CCCCCC
+  box-sizing: border-box
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08)
+
+
+#exampleFormControlTextarea3 
+  height: 150px
+  width: 910px
+
+
+.form-group label 
+  position: relative
+  left: 15px
+  font-family: Lato
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 23px
+  color: #383B37
+  margin-top: 10px
+
+
+.container 
+  display: block
+  position: relative
+  padding-left: 35px
+  margin-bottom: 12px
+  cursor: pointer
+  font-size: 22px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  font-family: Arial
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 25px
+  color: #000000
+
+
+.container input 
+  position: absolute
+  opacity: 0
+  cursor: pointer
+  height: 0
+  width: 0
+
+
+.checkmark 
+  position: absolute
+  top: 0
+  left: 0
+  height: 25px
+  width: 25px
+  background-color: #eee
+
+
+.container:hover input ~ .checkmark 
+  background-color: #ccc
+
+
+.container input:checked ~ .checkmark 
+  background-color: #2196F3
+
+
+.checkmark:after 
+  content: ""
+  position: absolute
+  display: none
+
+
+.container input:checked ~ .checkmark:after 
+  display: block
+
+
+.container .checkmark:after 
+  left: 9px
+  top: 5px
+  width: 5px
+  height: 10px
+  border: solid white
+  border-width: 0 3px 3px 0
+  -webkit-transform: rotate(45deg)
+  -ms-transform: rotate(45deg)
+  transform: rotate(45deg)
+
+
+.leave-comment button 
+  width: 167px
+  height: 59px
+  background: #383B37
+  box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2)
+  border-radius: 30px
+  font-family: Arial
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 23px
+  text-align: center
+  letter-spacing: 2px
+  text-transform: uppercase
+  color: #FFFFFF
+  border: 0px solid black
+  margin-top: 23px
+  margin-bottom: 60px
